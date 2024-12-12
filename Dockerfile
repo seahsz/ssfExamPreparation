@@ -1,7 +1,7 @@
 FROM eclipse-temurin:23.0.1_11-jdk AS builder
 # AS builder only for multi stage docker
 
-WORKDIR /myapp
+WORKDIR /compiledDir
 
 COPY src src
 COPY .mvn .mvn
@@ -29,7 +29,6 @@ ENV SPRING_DATA_REDIS_HOST=localhost
 ENV SPRING_DATA_REDIS_PORT=6379
 ENV SPRING_DATA_REIDS_USERNAME=
 ENV SPRING_DATA_REDIS_PASSWORD=
-ENV PORT=5000
 
 ENV PORT=3000
 
